@@ -4,9 +4,9 @@ with open('index.html', 'r', encoding='utf-8') as f:
     content = f.read()
 
 # Replace the base64 images in projects
-projects_images = ['rentout.png', 'peakpack.png']
+projects_images = ['rentout.webp', 'peakpack.webp']
 def replace_img(match):
-    img = projects_images.pop(0) if projects_images else 'peakpack.png'
+    img = projects_images.pop(0) if projects_images else 'peakpack.webp'
     return f"background-image:url('{img}')"
 
 content = re.sub(r"background-image:url\('data:image/[^']+'\)", replace_img, content)
